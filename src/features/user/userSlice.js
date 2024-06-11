@@ -42,3 +42,6 @@ export const { updateName } = userSlice.actions;
 
 // exporting the reducer - used in the store.js
 export default userSlice.reducer;
+
+// getters
+export const getUsername = (state) => state.username;
