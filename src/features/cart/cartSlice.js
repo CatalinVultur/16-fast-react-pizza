@@ -29,6 +29,8 @@ const cartSlice = createSlice({
 
             item.quantity--;
             item.totalPrice = item.quantity * item.unitPrice;
+
+            if (item.quantity === 0) cartSlice.caseReducers.deleteItem(state, action); // allows usage of another reducer case into this case
         },
         clearCart(state) {
             state.cart = [];
